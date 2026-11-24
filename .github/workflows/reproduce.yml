@@ -20,7 +20,10 @@ jobs:
         env:
           GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
         with:
-          packages: guido-s/meta@7033a54d613d90aa9633372134070be4d3220c6a
+          packages: |
+            guido-s/meta@7033a54d613d90aa9633372134070be4d3220c6a
+            any::ragg
+          dependencies: 'NA'
       - run: Rscript --vanilla reproduce.R
       - uses: actions/upload-artifact@v7
         with:
